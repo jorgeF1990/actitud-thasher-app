@@ -1,0 +1,153 @@
+/* =============================== */
+/*        Estilos del Footer      */
+/* =============================== */
+
+/* Estilos generales para el footer */
+.footer {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+/* Contenido principal del footer */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Envoltura para centrar íconos sociales SIEMPRE */
+.social-links-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de íconos */
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Iconos de redes sociales */
+.social-icon {
+    display: inline-block;
+}
+
+.social-icon-img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover en iconos */
+.social-icon:hover .social-icon-img {
+    transform: scale(1.1);
+}
+
+/* Enlace de contacto */
+.contact-link {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #444;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: #d4af37;
+    color: white;
+}
+
+/* Parte inferior del footer */
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 16px;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #d4af37;
+}
+
+.footer-copy {
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* ===================== */
+/*  Estilos Responsive   */
+/* ===================== */
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .social-links {
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .contact-link {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icon-img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contact-link {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .footer-link {
+        font-size: 14px;
+    }
+
+    .footer-copy {
+        font-size: 12px;
+    }
+}
