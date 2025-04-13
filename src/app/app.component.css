@@ -1,82 +1,145 @@
-/* Reset general y estilo base */
+/* ============================= */
+/* RESET Y ESTILO GLOBAL        */
+/* ============================= */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  /* Estilo del Header */
-  app-header {
-    display: block;
-    background-color: #222;
-    color: #fff;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  /* Estilo del Footer */
-  app-footer {
-    display: block;
-    background-color: #222;
-    color: #fff;
-    padding: 0.75rem 1rem;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    font-size: 0.9rem;
-  }
-  
-  /* Contenedor Principal */
-  .main-content {
-    padding: 2rem 1rem;
-    min-height: calc(100vh - 140px); /* Altura ajustada para header + footer */
-  }
-  
-  /* Caja Contenedora Responsive */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ============================= */
+/* TIPOGRAFÍA                   */
+/* ============================= */
+h1, h2, h3, h4 {
+  color: #222;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* ============================= */
+/* CONTENIDO PRINCIPAL          */
+/* ============================= */
+.main-content {
+  padding: 2rem 1rem;
+  min-height: calc(100vh - 140px); /* espacio para header + footer */
+}
+
+/* ============================= */
+/* CONTENEDOR RESPONSIVO        */
+/* ============================= */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================= */
+/* FOOTER                       */
+/* ============================= */
+app-footer {
+  display: block;
+  background-color: #222;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+/* ============================= */
+/* HEADER                       */
+/* ============================= */
+app-header {
+  display: block;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN            */
+/* ============================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
   .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 0.3s ease-in-out;
+    padding: 1.2rem;
   }
-  
-  .container:hover {
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+
+  app-header,
+  app-footer {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
   }
-  
-  /* Títulos */
-  h1, h2, h3, h4 {
-    color: #222;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    app-header, app-footer {
-      font-size: 1.2rem;
-      padding: 1rem;
-    }
-  
-    .container {
-      padding: 1rem;
-    }
-  
-    .main-content {
-      padding: 1.5rem 1rem;
-    }
+
+  .main-content {
+    padding: 1.2rem 0.75rem;
   }
-  
+
+  app-header,
+  app-footer {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .main-content {
+    padding: 1rem 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  app-header,
+  app-footer {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}

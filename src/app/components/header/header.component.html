@@ -1,40 +1,41 @@
 <header class="header">
-    <nav class="navbar">
-      <!-- Logo -->
-      <div class="logo">
-        <img src="logo1.png" alt="Logo de la tienda" class="logo-img" />
-        <span class="store-name"></span>
-      </div>
-  
-      <!-- Botón hamburguesa -->
-      <div class="hamburger" (click)="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-  
-      <!-- Menú de navegación -->
-      <ul class="nav-links" [class.active]="menuOpen">
-        <li>
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        </li>
-        <li>
-          <a routerLink="/productos" routerLinkActive="active">Productos</a>
-        </li>
-        <li>
-          <a routerLink="/login" routerLinkActive="active">Login</a>
-        </li>
-        <li>
-          <a routerLink="/register" routerLinkActive="active">Registrarse</a>
-        </li>
-        <li *ngIf="authService.isAuthenticated() && authService.getCurrentUser()?.role === 'admin'">
-          <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-        </li>
-        <li>
-          <a routerLink="/carrito" routerLinkActive="active" class="cart-link">
-            <img src="cart.png" alt="Carrito" class="cart-icon" />
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="logo1.png" alt="Logo de la tienda" class="logo-img" />
+      <span class="store-name"></span>
+    </div>
+
+    <!-- Botón hamburguesa -->
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Menú de navegación -->
+    <ul class="nav-links" [class.active]="menuOpen">
+      <li>
+        <a routerLink="/" routerLinkActive="active">Home</a>
+      </li>
+      <li>
+        <a routerLink="/productos" routerLinkActive="active">Productos</a>
+      </li>
+      <li *ngIf="!isLoggedIn">
+        <a routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+      <li *ngIf="!isLoggedIn">
+        <a routerLink="/register" routerLinkActive="active">Registrarse</a>
+      </li>
+      <li *ngIf="isLoggedIn && isAdmin()">
+        <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      </li>
+      <li *ngIf="isLoggedIn">
+        <a routerLink="/carrito" routerLinkActive="active" class="cart-link">
+          <img src="cart.png" alt="Carrito" class="cart-icon" />
+          <span class="cart-text">Carrito</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,198 +1,152 @@
-/* Estilos generales para el header */
+/* ================= HEADER GENERAL ================= */
 .header {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Estilos para la barra de navegación */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Estilo para el logo */
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo-img {
-    width: 150px;
-    height: auto;
-    margin-right: 10px;
-  }
-  
-  .store-name {
-    font-size: 24px;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================= LOGO ================= */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 150px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.store-name {
+  font-size: 24px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+/* ================= MENÚ DE NAVEGACIÓN ================= */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* ================= ESTADOS ================= */
+.nav-links li a:hover {
+  background-color: #444;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links li a.active {
+  color: #d4af37;
+  background-color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ================= CARRITO ================= */
+.cart-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.cart-text {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .cart-text {
+    display: inline;
     color: #f0f0f0;
-  }
-  
-  /* Menú de navegación */
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  
-  /* Estilo para los enlaces */
-  .nav-links li a {
-    text-decoration: none;
-    color: #f0f0f0;
-    font-size: 18px;
     font-weight: bold;
-    text-transform: uppercase;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: flex;
-    align-items: center;
+    margin-left: 5px;
   }
-  
-  /* Hover sobre los enlaces */
-  .nav-links li a:hover {
-    background-color: #444;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Enlace activo */
-  .nav-links li a.active {
-    color: #d4af37;
-    background-color: #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Estilo del botón de cerrar sesión */
-  .logout-button {
-    background-color: #ff4d4d;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-  }
-  
-  .logout-button:hover {
-    background-color: #d43f3f;
-  }
-  
-  /* Estilo para el icono del carrito */
-  .cart-icon {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    margin-right: 10px;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  
-  /* Espaciado del body */
-  body {
-    margin-top: 80px;
-  }
-  
-  /* Contenido principal */
-  .main-content {
-    padding-top: 80px;
-  }
-  
-  /* Estilo para botones de acción (si los usas) */
-  .action-button {
-    background-color: #d4af37;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .action-button:hover {
-    background-color: #b18f2e;
-  }
-  
-  .action-button.active {
-    background-color: #d4af37;
-    color: black;
-  }
-  
-  /* Estilo para barra de búsqueda */
-  .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 5px 10px;
-  }
-  
-  .search-bar input {
-    border: none;
-    outline: none;
-    padding: 5px 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    width: 200px;
-  }
-  
-  /* Hamburguesa */
+}
+
+/* ================= HAMBURGUESA ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
   .hamburger {
-    display: none;
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #000;
     flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    display: none;
   }
-  
-  .hamburger span {
-    height: 3px;
-    width: 25px;
-    background-color: #fff;
-    border-radius: 2px;
+
+  .nav-links.active {
+    display: flex;
   }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hamburger {
-      display: flex;
-    }
-  
-    .nav-links {
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #000;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      padding: 20px 0;
-      display: none;
-    }
-  
-    .nav-links.active {
-      display: flex;
-    }
-  
-    .nav-links li a {
-      font-size: 20px;
-    }
-  
-    body {
-      margin-top: 120px;
-    }
+
+  .nav-links li a {
+    font-size: 20px;
   }
-  
+}
+
+/* ================= BODY MARGIN ================= */
+body {
+  margin-top: 80px; /* deja espacio para el header fijo */
+}
+
+@media (max-width: 768px) {
+  body {
+    margin-top: 120px;
+  }
+}

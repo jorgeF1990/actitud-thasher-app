@@ -1,10 +1,13 @@
-<app-header></app-header> 
-<br/>
+<app-header></app-header>
 
-<main class="main-content">
-
-  <div class="container"></div>
+<br>
+<main class="main"> <!-- <-- Cambié el main por el div con la clase main -->
+  <div class="container">
+    <br>
+    <router-outlet></router-outlet> <!-- <-- Está dentro del main -->
+  </div>
+</main>
 
 <app-footer></app-footer>
 
-<router-outlet />
+

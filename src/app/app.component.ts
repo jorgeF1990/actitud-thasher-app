@@ -6,9 +6,11 @@ import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  standalone: true,
+  imports: [FooterComponent, HeaderComponent, RouterOutlet],
+  // Removed invalid 'imports' property
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // ← ojo, era `styleUrls` (plural)
 })
 export class AppComponent {
   title = 'actitud-thasher-app';
