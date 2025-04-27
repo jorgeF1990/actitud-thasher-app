@@ -7,20 +7,20 @@ import { map, take } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminGuard implements CanActivate {
+export class LoginGuard implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): Observable<boolean> {
-    return this.authService.getCurrentUser().pipe(
+    return this.authService.isAuthenticated$().pipe(
       take(1),
-      map(user => {
-        const isAdmin = user?.email === 'jorgesfb29@gmail.com'; // reemplaza si quieres
-        if (user && isAdmin) {
-          return true;
-        } else {
+      map(isAuth => {
+        console.log('[LoginGuard] ¿Está autenticado?', isAuth); // 👀 DEBUG
+        if (isAuth) {
           this.router.navigate(['/']);
           return false;
+        } else {
+          return true;
         }
       })
     );

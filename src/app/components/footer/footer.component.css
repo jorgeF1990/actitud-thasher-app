@@ -2,152 +2,118 @@
 /*        Estilos del Footer      */
 /* =============================== */
 
-/* Estilos generales para el footer */
 .footer {
-    background-color: #000; /* Fondo negro */
-    color: #fff; /* Texto blanco */
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+  font-family: sans-serif;
+  font-size: 14px;
 }
 
-/* Contenido principal del footer */
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
-/* Envoltura para centrar íconos sociales SIEMPRE */
-.social-links-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+/* Sección individual */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Contenedor de íconos */
+/* Redes sociales */
 .social-links {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-/* Iconos de redes sociales */
 .social-icon {
-    display: inline-block;
+  display: inline-block;
 }
 
 .social-icon-img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
 }
 
-/* Hover en iconos */
 .social-icon:hover .social-icon-img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-/* Enlace de contacto */
-.contact-link {
-    text-decoration: none;
-    color: #f0f0f0;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 20px;
-    background-color: #444;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.contact-link:hover {
-    background-color: #d4af37;
-    color: white;
-}
-
-/* Parte inferior del footer */
-.footer-bottom {
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #444;
-}
-
+/* Enlaces */
 .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
 }
 
 .footer-link {
-    text-decoration: none;
-    color: #f0f0f0;
-    font-size: 16px;
-    font-weight: normal;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
 .footer-link:hover {
-    color: #d4af37;
+  color: #d4af37;
 }
 
+/* Texto */
 .footer-copy {
-    font-size: 14px;
-    color: #bbb;
+  font-size: 14px;
+  color: #bbb;
+  margin: 0;
 }
 
 /* ===================== */
-/*  Estilos Responsive   */
+/*  Responsive Design    */
 /* ===================== */
 
 @media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
+  .footer-content {
+    gap: 10px;
+  }
 
-    .social-links {
-        gap: 15px;
-        padding: 10px 0;
-    }
+  .footer-section {
+    margin-bottom: 5px;
+  }
 
-    .contact-link {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
-    .footer-links {
-        flex-direction: column;
-        gap: 15px;
-    }
+  .footer-copy {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 480px) {
-    .social-icon-img {
-        width: 24px;
-        height: 24px;
-    }
+  .social-icon-img {
+    width: 24px;
+    height: 24px;
+  }
 
-    .contact-link {
-        font-size: 14px;
-        padding: 6px 12px;
-    }
+  .footer-link {
+    font-size: 14px;
+  }
 
-    .footer-link {
-        font-size: 14px;
-    }
-
-    .footer-copy {
-        font-size: 12px;
-    }
+  .footer-copy {
+    font-size: 12px;
+  }
 }

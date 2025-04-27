@@ -1,0 +1,211 @@
+/* Variables estilo Gmail */
+:root {
+  --bg-main: #f1f3f4;
+  --bg-secondary: #ffffff;
+  --text-main: #202124;
+  --text-secondary: #5f6368;
+  --accent-color: #1a73e8;
+  --btn-hover: #e8f0fe;
+  --border-color: #dadce0;
+}
+
+/* General */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text-main);
+  margin: 20px 0;
+}
+
+/* Wrapper de Dashboard */
+.dashboard-wrapper {
+  display: flex;
+  min-height: calc(100vh - 120px);
+  padding: 20px;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Sidebar estilo Gmail */
+.sidebar {
+  width: 240px;
+  background-color: var(--bg-secondary);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(60,64,67,.15);
+  position: sticky;
+  top: 0;
+  height: fit-content;
+}
+
+.sidebar .btn {
+  background: none;
+  color: var(--text-main);
+  padding: 10px 16px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-radius: 24px;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar .btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.sidebar .btn.active {
+  background-color: var(--accent-color);
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Área de contenido */
+.content-area {
+  flex-grow: 1;
+  background-color: var(--bg-secondary);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(60,64,67,.15);
+}
+
+/* Formularios */
+.product-form {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 30px;
+}
+
+.product-form .form-group input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  background-color: #fff;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: border 0.3s ease;
+}
+
+.product-form .form-group input:focus {
+  border: 1px solid var(--accent-color);
+  outline: none;
+}
+
+.product-form button {
+  padding: 10px 24px;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-form button:hover {
+  background-color: #1765cc;
+}
+
+/* Tabla estilo Gmail */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+  background-color: #f8f9fa;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.table td {
+  background-color: #fff;
+  color: var(--text-main);
+}
+
+.table tr:hover {
+  background-color: #f1f3f4;
+}
+
+/* Botones de acción */
+.btn-warning {
+  background-color: #fbbc04;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #e09b00;
+}
+
+.btn-danger {
+  background-color: #ea4335;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #c5221f;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .sidebar .btn {
+    width: 48%;
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  .content-area {
+    margin-left: 0;
+    padding: 20px 10px;
+  }
+}

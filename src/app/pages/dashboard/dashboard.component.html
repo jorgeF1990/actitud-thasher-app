@@ -1,2 +1,68 @@
-<h2>Bienvenido al Dashboard</h2>
-<p>Solo el administrador tiene acceso a esta sección.</p>
+<h1 class="text-center mb-4">Panel de Administración</h1>
+
+<div class="dashboard-wrapper">
+  <!-- Barra lateral -->
+  <aside class="sidebar">
+    <button class="btn btn-primary btn-block" [ngClass]="{ 'active': seccionActiva === 'usuarios' }" (click)="mostrarSeccion('usuarios')">👤 Usuarios</button>
+    <button class="btn btn-primary btn-block" [ngClass]="{ 'active': seccionActiva === 'productos' }" (click)="mostrarSeccion('productos')">📦 Productos</button>
+    <button class="btn btn-primary btn-block" [ngClass]="{ 'active': seccionActiva === 'pedidos' }" (click)="mostrarSeccion('pedidos')">🛒 Pedidos</button>
+    <button class="btn btn-primary btn-block" [ngClass]="{ 'active': seccionActiva === 'categorias' }" (click)="mostrarSeccion('categorias')">🗂️ Categorías</button>
+    <button class="btn btn-primary btn-block" [ngClass]="{ 'active': seccionActiva === 'roles' }" (click)="mostrarSeccion('roles')">🔐 Roles</button>
+    <button class="btn btn-primary btn-block" [ngClass]="{ 'active': seccionActiva === 'ventas' }" (click)="mostrarSeccion('ventas')">💰 Ventas</button>
+  </aside>
+
+  <!-- Área de contenido -->
+  <main class="content-area">
+    <!-- Sección productos -->
+    <div class="seccion" *ngIf="seccionActiva === 'productos'">
+      <h3>📦 Gestión de Productos</h3>
+
+      <!-- Formulario para Agregar o Editar Producto -->
+      <form (ngSubmit)="guardarProducto()" class="product-form">
+        <div class="form-group">
+          <input type="text" [(ngModel)]="producto.nombre" name="nombre" placeholder="Nombre del producto" required>
+        </div>
+        <div class="form-group">
+          <input type="number" [(ngModel)]="producto.precio" name="precio" placeholder="Precio" required>
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="producto.descripcion" name="descripcion" placeholder="Descripción">
+        </div>
+        <button type="submit" class="btn btn-success">
+          {{ producto.id ? 'Actualizar Producto' : 'Guardar Producto' }}
+        </button>
+      </form>
+
+      <!-- Tabla de Productos -->
+      <div *ngIf="productos.length > 0; else sinProductos">
+        <table class="table table-bordered table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Descripción</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of productos; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ producto.nombre }}</td>
+              <td>{{ producto.precio | currency }}</td>
+              <td>{{ producto.descripcion }}</td>
+              <td>
+                <button class="btn btn-warning" (click)="editarProducto(producto)">Editar</button>
+                <button class="btn btn-danger" (click)="eliminarProducto(producto.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ng-template #sinProductos>
+        <p>No hay productos registrados.</p>
+      </ng-template>
+    </div>
+  </main>
+</div>

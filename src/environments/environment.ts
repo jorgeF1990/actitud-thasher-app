@@ -1,11 +1,12 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: 'TU_API_KEY',
-    authDomain: 'TU_DOMINIO.firebaseapp.com',
-    projectId: 'TU_PROJECT_ID',
-    storageBucket: 'TU_BUCKET.appspot.com',
-    messagingSenderId: 'TU_SENDER_ID',
-    appId: 'TU_APP_ID'
+    apiKey: "AIzaSyDatwrPC01nVF2ruUVrcyxcZG2b5mzSfEc",
+  authDomain: "ecomerce-c0f9d.firebaseapp.com",
+  projectId: "ecomerce-c0f9d",
+  storageBucket: "ecomerce-c0f9d.firebasestorage.app",
+  messagingSenderId: "527922290496",
+  appId: "1:527922290496:web:42928030ee70fbd587a4a5",
+  measurementId: "G-HXJ9PR4DK6"
   }
 };

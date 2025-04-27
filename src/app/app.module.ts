@@ -1,36 +1,40 @@
-// src/app/app.module.ts
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routes';
-// Removed duplicate import of AppComponent
 
-// Componentes propios
-import { AppComponent } from './app.component';
+// Firebase
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from '../environments/environment';
+
+// Componentes Standalone
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-// Aquí puedes importar más componentes según los tengas
 
 @NgModule({
-  declarations: [
-
-    // otros componentes...
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
-    HeaderComponent,
-    FooterComponent,
+    AppRoutingModule,
 
+    // Componentes Standalone (Remove from imports as they are standalone)
 
-   
+    // Firebase
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule
   ],
   providers: [],
-    // Aquí se bootstrappea el AppComponent
-  // Removed bootstrap array as AppComponent is standalone
+  // Usa DashboardComponent como bootstrap si es el componente principal
 })
 export class AppModule { }

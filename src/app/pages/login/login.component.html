@@ -1,1 +1,41 @@
-<h1>hola login </h1>
+<div class="auth-wrapper" [class.register-mode]="modoRegistro">
+  <div class="form-container">
+    <!-- Login -->
+    <form class="form login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h2>Sign In</h2>
+
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" title="Email" placeholder="Enter your email" />
+
+      <label for="contrasena">Password</label>
+      <div class="password-container">
+        <input [type]="mostrarContrasena ? 'text' : 'password'" formControlName="contrasena" placeholder="Enter your password" />
+        <button type="button" (click)="toggleMostrarContrasena()">
+          {{ mostrarContrasena ? 'Hide' : 'Show' }}
+        </button>
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid || isLoading">Log In</button>
+      <button type="button" (click)="loginConGoogle()" [disabled]="isLoading">Log In with Google</button>
+
+      <div *ngIf="error" class="error-message">{{ error }}</div>
+      <p class="switch-form">Don't have an account? <a (click)="toggleModoRegistro()">Sign up</a></p>
+    </form>
+
+    <!-- Register -->
+    <form class="form register-form" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <h2>Register</h2>
+
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" title="Email" placeholder="Enter your email" />
+
+      <label for="contrasena">Password</label>
+      <input type="password" formControlName="contrasena" title="Password" placeholder="Enter your password" />
+
+      <button type="submit" [disabled]="registerForm.invalid || isLoading">Sign Up</button>
+
+      <div *ngIf="registerError" class="error-message">{{ registerError }}</div>
+      <p class="switch-form">Already have an account? <a (click)="toggleModoRegistro()">Sign in</a></p>
+    </form>
+  </div>
+</div>
